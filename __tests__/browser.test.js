@@ -15,6 +15,20 @@ describe('First puppeteer test', () => {
         })
         const page = await browser.newPage()
         await page.goto('https://www.google.com.ar')
+        await page.waitForSelector('img')
+
+        //For reloading
+        await page.reload()
+
+        //Moving back
+        await page.goBack()
+
+        //Moving forward
+        await page.goForward()
+
+        const platziPage = await browser.newPage()
+        await platziPage.goto('https://platzi.com')
+
         await browser.close()
 
     }, 30000)
